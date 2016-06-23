@@ -13,8 +13,22 @@ var AppView = Backbone.View.extend({
   },
 
   render: function() {
+    var searchBar = '<input type="search" placeholder="Search" class="searchbar"></input>';
+    var searchTypeList = [
+      '<select>',
+        '<option value="Artist">Artist</option>',
+        '<option value="Title">Title</option>',
+      '</select>'].join('');
+    var searchSection = [
+      '<div class="search">',
+        searchTypeList,
+        searchBar,
+      '</div>'
+    ].join('');
+
     return this.$el.html([
       this.playerView.$el,
+      searchSection,
       this.libraryView.$el,
       this.queueView.$el
     ]);
