@@ -7,6 +7,12 @@ var LibraryView = Backbone.View.extend({
     this.searchView = new SearchView();
     this.render();
     this.collection.on('add change', this.render, this);
+
+    this.searchView.on('enterPressed', function() {
+      var searchType = this.searchView.type;
+      var searchText = this.searchView.value;
+      this.collection.query(searchText, searchType.toLowerCase());
+    }, this);
   },
 
   render: function() {
@@ -21,5 +27,6 @@ var LibraryView = Backbone.View.extend({
     );
     this.$el.prepend(this.searchView.$el);
   }
+
 
 });
