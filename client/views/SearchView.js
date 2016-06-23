@@ -6,6 +6,10 @@ var SearchView = Backbone.View.extend({
     keydown: 'searchRender' 
   },
 
+  value: '',
+
+  type: 'Artist',
+
   initialize: function() {
     this.render();
   },
@@ -27,7 +31,9 @@ var SearchView = Backbone.View.extend({
 
   searchRender: function(e) {
     if (e.which === ENTER_KEY) {
-      // broadcast that enter was pressed
+      this.value = $('.searchbar').val();
+      this.type = $('select option:selected').val();
+      this.trigger('enterPressed', this);
     }
   }
 });
