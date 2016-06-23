@@ -11,11 +11,6 @@ var AppView = Backbone.View.extend({
     this.model.on('change:currentSong', function(model) {
       this.playerView.setSong(this.model.get('currentSong'));
     }, this);
-
-    // this.searchView.on('enterPressed', function() {
-    //   var searchType = this.searchView.type;
-    //   var searchText = this.searchView.value;
-    // }, this);
   },
 
   render: function() {
