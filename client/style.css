@@ -1,0 +1,17 @@
+.search {
+  display:block;
+  width: 300px;
+  position: relative;
+}
+
+input.searchbar {
+  position: absolute;
+  width: 225px;
+  font-size: 20px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+select {
+  font-size: 20px;
+}
