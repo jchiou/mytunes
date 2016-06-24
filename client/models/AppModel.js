@@ -18,7 +18,11 @@ var AppModel = Backbone.Model.extend({
     }, this);
 
     params.library.on('enqueue', function(song) {
+      // check what interaction state we are in
+      // if song queueing state
       this.get('songQueue').enqueue(song);
+      // else playlist creation state
+      
     }, this);
 
     this.get('songQueue').on('stop', function() {
