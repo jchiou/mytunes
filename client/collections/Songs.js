@@ -11,7 +11,7 @@ var Songs = Backbone.Collection.extend({
   },
 
   initialize: function() {
-    // this.fetch();
+    this.fetch();
     // $.ajax({
     //   url: this.url,
     //   type: 'GET',
@@ -27,13 +27,10 @@ var Songs = Backbone.Collection.extend({
     // });
   },
 
-
   query: function(searchText, searchType) {  
     var searchObj = {};
     searchObj[searchType] = searchText;
-    //Backbone.sync('read', this, {data: {where: JSON.stringify(searchObj)}});
-    //this.fetch({where: JSON.stringify(searchObj)});
-    this.fetch({data: {where: JSON.stringify(searchObj)}});
+    this.fetch({remove: false, data: {where: JSON.stringify(searchObj)}});
   }
 
 });
