@@ -2,6 +2,7 @@
   display:block;
   width: 300px;
   position: relative;
+  margin-bottom: 5px;
 }
 
 input.searchbar {
@@ -15,3 +16,41 @@ input.searchbar {
 select {
   font-size: 20px;
 }
+
+.library {
+  display: inline-block;
+  margin-right: 50px;
+  margin-bottom: 10px;
+  padding: 5px 15px 15px 15px;
+}
+
+.library-table {
+  border: 1px solid gray;
+}
+
+.library-table tbody tr:nth-child(even) {
+  background-color: white;
+}
+
+.library-table tbody tr:nth-child(odd) {
+  background-color: #e0e0eb;
+}
+
+.library-table td {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.audioPlayer {
+  display: block;
+  padding-left: 15px;
+}
+
+.playlist {
+  display:inline;
+}
+
+.songEntry {
+  height: 24px;
+}
+
