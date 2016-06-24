@@ -7,6 +7,7 @@ var LibraryView = Backbone.View.extend({
     this.searchView = new SearchView();
     this.render();
     this.collection.on('add change', this.render, this);
+    this.$el.addClass('library');
 
     this.searchView.on('enterPressed', function() {
       var searchType = this.searchView.type;
@@ -20,12 +21,15 @@ var LibraryView = Backbone.View.extend({
     // see http://api.jquery.com/detach/
     this.$el.children().detach();
     
-    this.$el.append('<table></table>').html('<th>Library</th>').append(
+    
+    var $table = $('<table class="library-table" rules="none"></table>');
+    $table.html('<tr><th colspan="3">Library</th></tr>').append(
       this.collection.map(function(song) {
         return new LibraryEntryView({model: song}).render();
       })
     );
-    this.$el.prepend(this.searchView.$el);
+    this.$el.append(this.searchView.$el);
+    this.$el.append($table);
   }
 
 
