@@ -12,19 +12,6 @@ var Songs = Backbone.Collection.extend({
 
   initialize: function() {
     this.fetch();
-    // $.ajax({
-    //   url: this.url,
-    //   type: 'GET',
-    //   success: function (result) {
-    //     result.results.forEach(function(song) {
-    //       collection.add(song, {silent: true});
-    //     });
-    //     collection.trigger('add', this);
-    //   },
-    //   error: function (data) {
-    //     console.error('Failed to fetch');
-    //   }
-    // });
   },
 
   query: function(searchText, searchType) {  
